@@ -1,22 +1,42 @@
+
 import os
 
 from dotenv import load_dotenv
 from sqlalchemy import create_engine, text
 from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy.engine import URL
+from sqlalchemy.engine import URL, make_url
 
 
 load_dotenv()
 
 
-DATABASE_URL = URL.create(
-    drivername="postgresql+psycopg2",
-    username=os.getenv("DB_USER"),
-    password=os.getenv("DB_PASSWORD"),
-    host=os.getenv("DB_HOST"),
-    port=int(os.getenv("DB_PORT", "5432")),
-    database=os.getenv("DB_NAME"),
-)
+def get_database_url():
+    # Render production database connection
+    render_database_url = os.getenv("DATABASE_URL")
+
+    if render_database_url:
+        database_url = make_url(render_database_url)
+
+        # Ensure SQLAlchemy uses psycopg2
+        if database_url.drivername in ("postgres", "postgresql"):
+            database_url = database_url.set(
+                drivername="postgresql+psycopg2"
+            )
+
+        return database_url
+
+    # Local development database connection
+    return URL.create(
+        drivername="postgresql+psycopg2",
+        username=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        host=os.getenv("DB_HOST"),
+        port=int(os.getenv("DB_PORT", "5432")),
+        database=os.getenv("DB_NAME"),
+    )
+
+
+DATABASE_URL = get_database_url()
 
 
 engine = create_engine(
@@ -56,8 +76,8 @@ def test_database_connection():
                 "database": database_name,
             }
 
-    except Exception as error:
+    except Exception:
         return {
             "connected": False,
-            "error": str(error),
+            "error": "Database connection failed.",
         }
