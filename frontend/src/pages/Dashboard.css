@@ -1,0 +1,470 @@
+/* =====================================================
+   GRIMORA DASHBOARD
+===================================================== */
+
+.dashboard-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.dashboard-refresh-button {
+  min-height: 36px;
+  padding: 0 13px;
+  border: 1px solid #474b50;
+  border-radius: 7px;
+  background: #33373b;
+  color: #c0c4c8;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: inherit;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.dashboard-refresh-button:hover {
+  background: #3b3f44;
+}
+
+
+/* =====================================================
+   MESSAGES
+===================================================== */
+
+.dashboard-message {
+  min-height: 120px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #2b2e32;
+  border: 1px solid #393d42;
+  border-radius: 10px;
+  color: #858b91;
+  font-size: 11px;
+}
+
+.dashboard-error {
+  color: #c18d8d;
+}
+
+
+/* =====================================================
+   PRIMARY STATS
+===================================================== */
+
+.dashboard-money {
+  font-size: 22px !important;
+}
+
+
+/* =====================================================
+   SECONDARY STATS
+===================================================== */
+
+.dashboard-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin: 18px 0 20px;
+}
+
+.dashboard-mini-card {
+  min-height: 76px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: #2b2e32;
+  border: 1px solid #393d42;
+  border-radius: 9px;
+}
+
+.dashboard-mini-card > svg {
+  flex-shrink: 0;
+  color: #858c93;
+}
+
+.dashboard-mini-card span {
+  display: block;
+  margin-bottom: 6px;
+  color: #777e85;
+  font-size: 9px;
+}
+
+.dashboard-mini-card strong {
+  display: block;
+  color: #e0e2e4;
+  font-size: 14px;
+}
+
+
+/* =====================================================
+   PANELS
+===================================================== */
+
+.dashboard-panel {
+  min-width: 0;
+  background: #2b2e32;
+  border: 1px solid #393d42;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.dashboard-panel-header {
+  min-height: 68px;
+  padding: 15px 18px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #393d42;
+}
+
+.dashboard-panel-header h3 {
+  margin: 0;
+  color: #e0e2e4;
+  font-size: 12px;
+}
+
+.dashboard-panel-header p {
+  margin: 5px 0 0;
+  color: #71777e;
+  font-size: 9px;
+}
+
+.dashboard-panel-header button {
+  padding: 7px 10px;
+  flex-shrink: 0;
+  border: 1px solid #454a4f;
+  border-radius: 6px;
+  background: #33373b;
+  color: #aeb3b8;
+  font-family: inherit;
+  font-size: 9px;
+  cursor: pointer;
+}
+
+.dashboard-panel-header button:hover {
+  background: #3b3f44;
+}
+
+
+/* =====================================================
+   CHARTS
+===================================================== */
+
+.dashboard-chart-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(320px, 0.8fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-chart {
+  min-height: 290px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.dashboard-pie-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-legend {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dashboard-legend > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #858b91;
+  font-size: 9px;
+}
+
+.dashboard-legend strong {
+  color: #d9dcdf;
+}
+
+.dashboard-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.dashboard-dot-0 {
+  background: #7f9689;
+}
+
+.dashboard-dot-1 {
+  background: #b29a68;
+}
+
+.dashboard-dot-2 {
+  background: #a87979;
+}
+
+
+/* =====================================================
+   RECENT ACTIVITY
+===================================================== */
+
+.dashboard-activity-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.dashboard-receipts-panel {
+  grid-column: 1 / -1;
+}
+
+.dashboard-list {
+  min-height: 120px;
+}
+
+.dashboard-list-row {
+  min-height: 64px;
+  padding: 12px 18px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.dashboard-list-row + .dashboard-list-row {
+  border-top: 1px solid #373b3f;
+}
+
+.dashboard-list-row > div:first-child {
+  min-width: 0;
+}
+
+.dashboard-list-row strong {
+  display: block;
+  color: #d7dade;
+  font-size: 10px;
+}
+
+.dashboard-list-row span {
+  display: block;
+  margin-top: 4px;
+  color: #737a81;
+  font-size: 9px;
+}
+
+.dashboard-list-right {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.dashboard-list-right strong {
+  font-size: 9px;
+}
+
+
+/* =====================================================
+   STATUS BADGES
+===================================================== */
+
+.dashboard-status {
+  display: inline-flex !important;
+  width: fit-content;
+  margin-left: auto;
+  padding: 4px 7px;
+  border-radius: 5px;
+  font-size: 8px !important;
+}
+
+.dashboard-status-submitted {
+  background: #403b2e;
+  color: #c6aa70 !important;
+}
+
+.dashboard-status-approved {
+  background: #303b36;
+  color: #84b59a !important;
+}
+
+.dashboard-status-rejected {
+  background: #3c3031;
+  color: #c18d8d !important;
+}
+
+.dashboard-status-sent {
+  background: #343940;
+  color: #9baabd !important;
+}
+
+.dashboard-status-partially_received {
+  background: #403b2e;
+  color: #c6aa70 !important;
+}
+
+.dashboard-status-received,
+.dashboard-status-completed {
+  background: #303b36;
+  color: #84b59a !important;
+}
+
+.dashboard-status-cancelled {
+  background: #3c3031;
+  color: #c18d8d !important;
+}
+
+
+/* =====================================================
+   LOW STOCK ALERT
+===================================================== */
+
+.dashboard-stock-alert {
+  padding: 17px;
+  background: #2b2e32;
+  border: 1px solid #514a3b;
+  border-radius: 10px;
+}
+
+.dashboard-stock-alert-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.dashboard-stock-alert-title > svg {
+  margin-top: 1px;
+  flex-shrink: 0;
+  color: #b29a68;
+}
+
+.dashboard-stock-alert-title strong {
+  display: block;
+  color: #d9dcdf;
+  font-size: 11px;
+}
+
+.dashboard-stock-alert-title span {
+  display: block;
+  margin-top: 4px;
+  color: #7d8389;
+  font-size: 9px;
+}
+
+.dashboard-alert-products {
+  margin-top: 13px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.dashboard-alert-products > div {
+  padding: 10px 12px;
+  background: #25282b;
+  border: 1px solid #414039;
+  border-radius: 7px;
+}
+
+.dashboard-alert-products strong {
+  display: block;
+  color: #d0d3d6;
+  font-size: 9px;
+}
+
+.dashboard-alert-products span {
+  display: block;
+  margin-top: 5px;
+  color: #81878d;
+  font-size: 8px;
+}
+
+
+/* =====================================================
+   EMPTY STATE
+===================================================== */
+
+.dashboard-empty {
+  min-height: 100px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777e85;
+  font-size: 10px;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1100px) {
+  .dashboard-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-chart-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 800px) {
+  .dashboard-activity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-receipts-panel {
+    grid-column: auto;
+  }
+
+  .dashboard-alert-products {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .dashboard-header-actions {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-refresh-button,
+  .dashboard-header-actions .primary-button {
+    width: 100%;
+  }
+
+  .dashboard-mini-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-list-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .dashboard-list-right {
+    width: 100%;
+    text-align: left;
+  }
+
+  .dashboard-status {
+    margin-left: 0;
+  }
+}

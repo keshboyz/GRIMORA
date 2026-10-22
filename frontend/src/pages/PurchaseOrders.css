@@ -1,0 +1,255 @@
+/* =====================================================
+   PURCHASE ORDER CREATION
+===================================================== */
+
+.po-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.po-create-main {
+  min-height: 36px;
+  padding: 0 14px;
+  border: 1px solid #d8dadd;
+  border-radius: 7px;
+  background: #e4e6e8;
+  color: #202327;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.po-create-main:hover {
+  background: #ffffff;
+}
+
+.po-create-main:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.po-success-message,
+.po-info-message {
+  margin-bottom: 15px;
+  padding: 11px 14px;
+  border-radius: 7px;
+  font-size: 10px;
+}
+
+.po-success-message {
+  border: 1px solid #3f5549;
+  background: #29352e;
+  color: #9fc5ad;
+}
+
+.po-info-message {
+  border: 1px solid #41464b;
+  background: #292d31;
+  color: #959ca3;
+}
+
+.po-create-modal {
+  width: min(900px, 100%);
+}
+
+.po-create-content {
+  padding: 20px;
+}
+
+.po-form-error {
+  margin-bottom: 15px;
+  padding: 11px 13px;
+  border: 1px solid #624244;
+  border-radius: 7px;
+  background: #382a2b;
+  color: #d6a3a5;
+  font-size: 10px;
+}
+
+.po-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 13px;
+}
+
+.po-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.po-field-full {
+  grid-column: 1 / -1;
+}
+
+.po-field label {
+  color: #969ca2;
+  font-size: 9px;
+  font-weight: 600;
+}
+
+.po-field input,
+.po-field select,
+.po-field textarea {
+  width: 100%;
+  height: 38px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid #41454a;
+  border-radius: 7px;
+  outline: none;
+  background: #24272a;
+  color: #d8dadd;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.po-field input:focus,
+.po-field select:focus,
+.po-field textarea:focus {
+  border-color: #747b82;
+}
+
+.po-create-items-heading {
+  margin-top: 22px;
+  margin-bottom: 10px;
+}
+
+.po-create-items-heading h4 {
+  margin: 0;
+  color: #dfe1e3;
+  font-size: 12px;
+}
+
+.po-create-items-heading p {
+  margin: 5px 0 0;
+  color: #777e85;
+  font-size: 9px;
+}
+
+.po-create-empty {
+  padding: 28px;
+  border: 1px dashed #41454a;
+  border-radius: 7px;
+  color: #777e85;
+  font-size: 10px;
+  text-align: center;
+}
+
+.po-price-input {
+  width: 120px;
+  height: 32px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  border: 1px solid #41454a;
+  border-radius: 6px;
+  outline: none;
+  background: #202326;
+  color: #d8dadd;
+  font-family: inherit;
+  font-size: 10px;
+}
+
+.po-price-input:focus {
+  border-color: #747b82;
+}
+
+.po-create-totals {
+  width: min(360px, 100%);
+  margin: 18px 0 0 auto;
+  overflow: hidden;
+  border: 1px solid #393d42;
+  border-radius: 7px;
+}
+
+.po-create-totals > div {
+  padding: 10px 13px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #25282b;
+}
+
+.po-create-totals > div + div {
+  border-top: 1px solid #393d42;
+}
+
+.po-create-totals span {
+  color: #858b91;
+  font-size: 9px;
+}
+
+.po-create-totals strong {
+  color: #d9dcdf;
+  font-size: 10px;
+}
+
+.po-create-totals .po-create-grand-total {
+  background: #303337;
+}
+
+.po-create-grand-total strong {
+  color: #f0f1f2;
+  font-size: 14px;
+}
+
+.po-create-actions {
+  padding: 15px 20px;
+  border-top: 1px solid #3b3f43;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.po-status-sent {
+  background: #343940;
+  color: #9baabd;
+}
+
+.po-status-received {
+  background: #303b36;
+  color: #84b59a;
+}
+
+.po-status-draft {
+  background: #35373a;
+  color: #aeb3b8;
+}
+
+.po-status-pending_approval {
+  background: #403b2e;
+  color: #c6aa70;
+}
+
+.po-status-approved {
+  background: #303b36;
+  color: #84b59a;
+}
+
+@media (max-width: 700px) {
+  .po-header-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .po-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .po-field-full {
+    grid-column: auto;
+  }
+
+  .po-create-main,
+  .po-refresh-main {
+    width: 100%;
+  }
+}
